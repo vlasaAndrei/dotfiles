@@ -13,33 +13,10 @@ Personal dotfiles for Linux (i3wm, zsh, vim, and development tools)
 
 ## Prerequisites
 
-You have two options for installing prerequisites:
-
-### Option 1: Automated Installation (Recommended)
-
-Use the included script to install all applications automatically:
+### Required packages
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-./scripts/install-apps.sh
-```
-
-This will install the latest stable versions of:
-- **Window Manager**: i3, polybar, picom, feh, flameshot, dmenu, i3lock
-- **Shell**: zsh with Oh My Zsh, vim, git, tmux
-- **Terminal**: Alacritty (built from source via Cargo)
-- **Development**: VS Code, GitHub CLI, Node.js (via NVM), pnpm, Go
-- **Browsers**: Google Chrome, Zen Browser
-- **Apps**: Slack, Spotify, Insomnia
-- **Fonts**: Font Awesome, Powerline, JetBrains Mono Nerd Font
-
-### Option 2: Manual Installation
-
-If you prefer to install packages manually:
-
-```bash
-# Ubuntu/Debian/Pop!_OS - Core packages
+# Ubuntu/Debian/Pop!_OS
 sudo apt update
 sudo apt install -y \
     i3 \
@@ -55,13 +32,64 @@ sudo apt install -y \
     flameshot \
     xinput \
     xss-lock \
-    i3lock \
+    i3lock
+```
+
+### Optional packages
+
+```bash
+# Additional tools referenced in configs
+sudo apt install -y \
     dmenu \
+    i3status \
     network-manager \
     nm-applet
 ```
 
-Then install additional apps (VS Code, Chrome, Slack, etc.) as needed.
+## Applications Used
+
+These applications are referenced in the dotfiles (primarily i3 keybindings). You'll need to install them separately:
+
+### Browsers
+- **Zen Browser** (`Super+b`) - Firefox-based browser
+  - Download from: https://github.com/zen-browser/desktop/releases
+  - Install to: `~/zen/zen` (or update path in i3 config)
+- **Google Chrome** (`Super+g`)
+  - Download from: https://www.google.com/chrome/
+  - Or: `wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb`
+
+### Development Tools
+- **VS Code** (`Super+m`)
+  - Install from: https://code.visualstudio.com/
+  - Or via snap: `sudo snap install code --classic`
+- **Insomnia** (`Super+i`) - API testing tool
+  - Install via snap: `sudo snap install insomnia`
+- **Node.js & NVM** - Node Version Manager
+  - Install from: https://github.com/nvm-sh/nvm
+  - Command: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash`
+- **pnpm** - Fast Node package manager
+  - Install from: https://pnpm.io/installation
+  - Command: `curl -fsSL https://get.pnpm.io/install.sh | sh -`
+- **Go** - Programming language
+  - Referenced in PATH in zshrc (`/usr/local/go/bin`)
+  - Download from: https://go.dev/dl/
+
+### Communication & Productivity
+- **Slack** (`Super+p`)
+  - Install via snap: `sudo snap install slack`
+- **Spotify** (`Super+j`)
+  - Install via snap: `sudo snap install spotify`
+
+### Terminal
+- **Alacritty** - Terminal emulator (launched with `Super+Enter`)
+  - Path in i3 config: `/home/freak/.cargo/bin/alacritty`
+  - Install via cargo: `cargo install alacritty`
+  - Or via apt: `sudo apt install alacritty`
+
+### Notes
+- Keybindings are defined in `config/i3/config` (lines 196-217)
+- Update application paths in i3 config if you install to different locations
+- WebStorm keybinding (`Super+c`) is commented out but available
 
 ## Installation
 
@@ -70,11 +98,6 @@ Then install additional apps (VS Code, Chrome, Slack, etc.) as needed.
 ```bash
 git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-
-# Option 1: Install apps first (recommended for fresh machines)
-./scripts/install-apps.sh
-
-# Option 2: Just install dotfiles (if apps already installed)
 ./install.sh
 ```
 
@@ -144,8 +167,7 @@ dotfiles/
 │   └── fehbg        # Wallpaper script
 ├── vim/             # Vim configurations
 │   └── vimrc        # Vim configuration
-├── scripts/         # Utility scripts
-│   └── install-apps.sh  # Automated application installer
+├── scripts/         # Utility scripts (future use)
 ├── install.sh       # Dotfiles installation script
 ├── .gitignore       # Git ignore file
 └── README.md        # This file
