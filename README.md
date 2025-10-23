@@ -190,6 +190,13 @@ dotfiles/
 - SSH agent auto-start
 - NVM and pnpm integration
 
+### Keyboard Remapping
+- **Ctrl and Alt keys are swapped** via xmodmap
+- Left Ctrl key functions as Alt
+- Left Alt key functions as Ctrl
+- Automatically loaded on i3 startup
+- Configuration in `shell/xmodmap`
+
 ### Custom Keybindings (i3)
 - `Super+Enter`: Alacritty terminal
 - `Super+b`: Zen browser
