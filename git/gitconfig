@@ -1,0 +1,21 @@
+[core]
+	editor = vim
+
+[pull]
+	rebase = true
+
+[init]
+	defaultBranch = master
+
+[alias]
+	# Add your git aliases here
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	unstage = reset HEAD --
+
+# Include local gitconfig for personal info (name, email, etc.)
+# This file should NOT be committed to the repository
+[include]
+	path = ~/.config/git/gitconfig.local

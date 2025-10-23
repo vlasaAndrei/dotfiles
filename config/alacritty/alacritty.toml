@@ -1,0 +1,99 @@
+[window]
+opacity = 0.90
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"
+
+# Monokai Pro color scheme for Alacritty
+
+[colors.primary]
+background = '#2d2a2e'
+foreground = '#fcfcfa'
+
+[colors.cursor]
+text = '#2d2a2e'
+cursor = '#fcfcfa'
+
+[colors.vi_mode_cursor]
+text = '#2d2a2e'
+cursor = '#fcfcfa'
+
+[colors.selection]
+text = '#fcfcfa'
+background = '#5b595c'
+
+[colors.normal]
+black = '#403e41'
+red = '#ff6188'
+green = '#a9dc76'
+yellow = '#ffd866'
+blue = '#fc9867'
+magenta = '#ab9df2'
+cyan = '#78dce8'
+white = '#fcfcfa'
+
+[colors.bright]
+black = '#727072'
+red = '#ff6188'
+green = '#a9dc76'
+yellow = '#ffd866'
+blue = '#fc9867'
+magenta = '#ab9df2'
+cyan = '#78dce8'
+white = '#fcfcfa'
+
+# Optional: Dim colors (when text is dimmed)
+[colors.dim]
+black = '#403e41'
+red = '#ff6188'
+green = '#a9dc76'
+yellow = '#ffd866'
+blue = '#fc9867'
+magenta = '#ab9df2'
+cyan = '#78dce8'
+white = '#fcfcfa'
+
+# Optional: Additional UI colors
+[colors.hints.start]
+foreground = '#2d2a2e'
+background = '#ffd866'
+
+[colors.hints.end]
+foreground = '#2d2a2e'
+background = '#727072'
+
+[colors.line_indicator]
+foreground = 'None'
+background = 'None'
+
+[colors.footer_bar]
+foreground = '#fcfcfa'
+background = '#403e41'
+
+[colors.search.matches]
+foreground = '#2d2a2e'
+background = '#ffd866'
+
+[colors.search.focused_match]
+foreground = '#2d2a2e'
+background = '#a9dc76'
+
+[scrolling]
+history = 10000
+multiplier = 3

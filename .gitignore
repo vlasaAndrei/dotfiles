@@ -1,0 +1,66 @@
+# Sensitive data - DO NOT COMMIT
+*.key
+*.pem
+*.p12
+*_rsa
+*_dsa
+*_ed25519
+*.credentials
+*.secret
+*secret*
+*password*
+.env
+.env.*
+
+# Git config with personal info (use git/gitconfig.local instead)
+git/gitconfig.local
+
+# Shell history files
+*_history
+.bash_history
+.zsh_history
+.lesshst
+.viminfo
+
+# Cache and temporary files
+.cache/
+*.cache
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+.zcompdump*
+*.zwc
+
+# NPM/Yarn credentials
+.npmrc
+.yarnrc
+
+# SSH directory (NEVER commit SSH keys)
+.ssh/
+
+# AWS credentials
+.aws/
+
+# Authentication tokens
+*auth_token*
+*.token
+
+# Claude config (may contain API keys)
+.claude.json
+.claude.json.backup
+
+# System files
+.sudo_as_admin_successful
+
+# Oh-My-Zsh (should be installed separately)
+.oh-my-zsh/
+
+# Node version manager
+.nvm/
+
+# Local machine-specific configs
+*.local
+local/
