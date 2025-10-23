@@ -13,10 +13,33 @@ Personal dotfiles for Linux (i3wm, zsh, vim, and development tools)
 
 ## Prerequisites
 
-### Required packages
+You have two options for installing prerequisites:
+
+### Option 1: Automated Installation (Recommended)
+
+Use the included script to install all applications automatically:
 
 ```bash
-# Ubuntu/Debian/Pop!_OS
+git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./scripts/install-apps.sh
+```
+
+This will install the latest stable versions of:
+- **Window Manager**: i3, polybar, picom, feh, flameshot, dmenu, i3lock
+- **Shell**: zsh with Oh My Zsh, vim, git, tmux
+- **Terminal**: Alacritty (built from source via Cargo)
+- **Development**: VS Code, GitHub CLI, Node.js (via NVM), pnpm, Go
+- **Browsers**: Google Chrome, Zen Browser
+- **Apps**: Slack, Spotify, Insomnia
+- **Fonts**: Font Awesome, Powerline, JetBrains Mono Nerd Font
+
+### Option 2: Manual Installation
+
+If you prefer to install packages manually:
+
+```bash
+# Ubuntu/Debian/Pop!_OS - Core packages
 sudo apt update
 sudo apt install -y \
     i3 \
@@ -32,19 +55,13 @@ sudo apt install -y \
     flameshot \
     xinput \
     xss-lock \
-    i3lock
-```
-
-### Optional packages
-
-```bash
-# Additional tools referenced in configs
-sudo apt install -y \
+    i3lock \
     dmenu \
-    i3status \
     network-manager \
     nm-applet
 ```
+
+Then install additional apps (VS Code, Chrome, Slack, etc.) as needed.
 
 ## Installation
 
@@ -53,6 +70,11 @@ sudo apt install -y \
 ```bash
 git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
 cd ~/dotfiles
+
+# Option 1: Install apps first (recommended for fresh machines)
+./scripts/install-apps.sh
+
+# Option 2: Just install dotfiles (if apps already installed)
 ./install.sh
 ```
 
@@ -123,7 +145,8 @@ dotfiles/
 ├── vim/             # Vim configurations
 │   └── vimrc        # Vim configuration
 ├── scripts/         # Utility scripts
-├── install.sh       # Installation script
+│   └── install-apps.sh  # Automated application installer
+├── install.sh       # Dotfiles installation script
 ├── .gitignore       # Git ignore file
 └── README.md        # This file
 ```
