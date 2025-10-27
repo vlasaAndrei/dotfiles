@@ -48,7 +48,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-msg '[class="Alacritty"] focus' || /home/freak/.cargo/bin/alacritty --config-file /home/freak/.config/alacritty/alacritty.toml
+bindsym $mod+Return exec --no-startup-id i3-msg '[class="Alacritty"] focus' || $HOME/.cargo/bin/alacritty --config-file $HOME/.config/alacritty/alacritty.toml
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -197,7 +197,7 @@ bar {
 exec --no-startup-id xinput set-button-map 9 1 2 3 5 4 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 
 # Firefox
-bindsym $mod+b exec --no-startup-id i3-msg '[class="zen"] focus' || /home/freak/zen/zen
+bindsym $mod+b exec --no-startup-id i3-msg '[class="zen"] focus' || $HOME/apps/zen/zen/zen
 
 # WebStorm  
 #bindsym $mod+c exec --no-startup-id i3-msg '[class="jetbrains-webstorm"] focus' || webstorm
@@ -223,7 +223,7 @@ bindsym ctrl+shift+s exec flameshot gui
 exec_always --no-startup-id xrandr --output HDMI-1 --auto --primary --output eDP-1 --auto --left-of HDMI-1
 
 # Handling displays script
-exec --no-startup-id /home/freak/.config/i3/lid_monitor.sh
+exec --no-startup-id $HOME/.config/i3/lid_monitor.sh
 
 # Comment out or remove the existing bar
 # bar {
@@ -244,7 +244,7 @@ workspace_auto_back_and_forth yes
 for_window [class="slack"] move to workspace current, focus
 
 # Set wallpaper on startup
-exec --no-startup-id feh --bg-scale /home/freak/Pictures/Wallpapers/jingmai-village.jpg --bg-scale /home/freak/Pictures/Wallpapers/jingmai-village.jpg
+exec --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/jingmai-village.jpg --bg-scale $HOME/Pictures/Wallpapers/jingmai-village.jpg
 
 # Start picom compositor in background
 exec --no-startup-id picom -b

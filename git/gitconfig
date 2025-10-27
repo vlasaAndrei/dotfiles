@@ -19,3 +19,6 @@
 # This file should NOT be committed to the repository
 [include]
 	path = ~/.config/git/gitconfig.local
+[user]
+	email = vlasa.andrei@agilefreaks.com
+	name = Vlasa

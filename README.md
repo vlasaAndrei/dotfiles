@@ -84,7 +84,6 @@ These applications are referenced in the dotfiles (primarily i3 keybindings). Yo
 - **Alacritty** - Terminal emulator (launched with `Super+Enter`)
   - Path in i3 config: `/home/freak/.cargo/bin/alacritty`
   - Install via cargo: `cargo install alacritty`
-  - Or via apt: `sudo apt install alacritty`
 
 ### Notes
 - Keybindings are defined in `config/i3/config` (lines 196-217)
