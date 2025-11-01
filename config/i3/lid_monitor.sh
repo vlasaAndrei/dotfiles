@@ -15,8 +15,10 @@ acpi_listen | while read event; do
         
         if [[ $LID_STATE == "closed" ]]; then
             xrandr --output "$LAPTOP_DISPLAY" --off
+            autorandr --change
         elif [[ $LID_STATE == "open" ]]; then
             xrandr --output "$LAPTOP_DISPLAY" --auto
+            autorandr --change
         fi
     fi
 done

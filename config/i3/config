@@ -28,6 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xset s 600 6000
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
@@ -222,6 +223,8 @@ bindsym ctrl+shift+s exec flameshot gui
 #Make external display primary
 exec_always --no-startup-id xrandr --output HDMI-1 --auto --primary --output eDP-1 --auto --left-of HDMI-1
 
+exec_always --no-startup-id autorandr --change
+
 # Handling displays script
 exec --no-startup-id $HOME/.config/i3/lid_monitor.sh
 
@@ -244,7 +247,7 @@ workspace_auto_back_and_forth yes
 for_window [class="slack"] move to workspace current, focus
 
 # Set wallpaper on startup
-exec --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/jingmai-village.jpg --bg-scale $HOME/Pictures/Wallpapers/jingmai-village.jpg
+exec --no-startup-id feh --bg-scale $HOME/Pictures/Wallpapers/green-cyber-city.jpeg
 
 # Start picom compositor in background
 exec --no-startup-id picom -b
